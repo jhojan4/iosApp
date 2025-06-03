@@ -28,7 +28,7 @@ struct MiddlePresentationView: View {
                         print("Icono redondo presionado")
                     }
                     .offset(x: 150)                }
-                Text("Colocar como un View Model")
+                Text("Colocar como un View Model-Prueba de Commit Jhojan")
         
             
             }
