@@ -33,7 +33,7 @@ struct AppButtons {
                 Text(title)
                     .fontWeight(.semibold)
                     .padding()
-                    .frame(maxWidth: .infinity)
+                    .frame(width: 150,height: 30)
                     .foregroundColor(foreground)
                     .background(AppColors.tertiaryLight)
                     .cornerRadius(20)

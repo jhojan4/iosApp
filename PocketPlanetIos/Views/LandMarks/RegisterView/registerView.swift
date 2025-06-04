@@ -8,11 +8,38 @@
 import SwiftUI
 
 struct registerView: View {
+    var navigate:(AppRoute)->Void
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        ZStack {
+            BackGround()
+
+            // Botón en la esquina superior izquierda
+            VStack {
+                HStack {
+                    AppButtons.CircleIcon(
+                        systemImage: "chevron.left",
+                        background: AppColors.tertiaryLight,
+                        size: 25
+                    ) {
+                        print("Devolver")
+                        navigate(.login)
+                    }
+                    Spacer()
+                }
+                Spacer()
+            }
+            .padding() // Opcional: para no pegarlo completamente al borde
+            
+            // Contenido principal
+            cardRegister()
+        }
     }
 }
 
 #Preview {
-    registerView()
+    NavigationStack{
+        registerView(navigate:{ route in print("\(route)")})
+        
+    }
 }

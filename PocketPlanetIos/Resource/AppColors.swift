@@ -72,6 +72,8 @@ struct AppColors {
     // MARK: - Tertiary Light
         static let tertiaryLight = Color(hex: "#006B5D")
         static let onTertiaryLight = Color.white
+    static let surfaceDimLight = Color(hex: "#FFD5DDCB")
+
         static let tertiaryContainerLight = Color(hex: "#00BBA4")
         static let onTertiaryContainerLight = Color(hex: "#00443B")
 

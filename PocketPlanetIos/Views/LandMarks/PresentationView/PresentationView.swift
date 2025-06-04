@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PresentationView: View {
+    var navigate:((AppRoute)->Void)
     var body: some View {
         ZStack {
             VStack{
@@ -27,9 +28,11 @@ struct PresentationView: View {
                 HStack(spacing: 20) {
                     AppButtons.Styled(title: "Iniciar Sesión") {
                         print("Debe ir a Iniciar Sesión")
+                        navigate(.login)
                     }
                     AppButtons.Styled(title: "Registrar") {
                         print("Debe ir a Registro")
+                        navigate(.register)
                     }
                 }
                     .padding(.horizontal, 40)
@@ -42,5 +45,8 @@ struct PresentationView: View {
 
 
 #Preview {
-    PresentationView()
+    NavigationStack{
+        PresentationView(navigate:{ route in print("\(route)")})
+        
+    }
 }

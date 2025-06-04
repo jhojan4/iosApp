@@ -11,7 +11,9 @@ import SwiftUI
 struct PocketPlanetIosApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                NavigationRouter()
+            }
         }
     }
 }
