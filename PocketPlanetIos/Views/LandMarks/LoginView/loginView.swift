@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct loginView: View {
+    
     var navigate: (AppRoute)->Void
+    @Environment(\.dismiss) private var dismiss // ⬅️ Importante
     var body: some View {
         ZStack {
             BackGround()
@@ -21,7 +23,7 @@ struct loginView: View {
                         background: AppColors.tertiaryLight,
                         size: 25
                     ) {
-                        print("Devolver")
+                        dismiss()
             
                     }
                     Spacer()
@@ -31,7 +33,7 @@ struct loginView: View {
             .padding() // Opcional: para no pegarlo completamente al borde
             
             // Contenido principal
-            cardLogin(onLogin:{"Inicio de Sesion"}, onBack: {})
+            cardLogin(navigate: navigate)
         }
     }
 }

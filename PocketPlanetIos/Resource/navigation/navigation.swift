@@ -15,10 +15,10 @@ enum AppRoute:Hashable {
 
 struct NavigationRouter: View {
     @State private var path: [AppRoute] = []
-
+    @StateObject private var presentationViewModel = PresentationViewModel() // ✅
     var body: some View {
         NavigationStack(path: $path) {
-            PresentationView(navigate: { route in
+            PresentationView(viewModel: presentationViewModel,navigate: { route in
                 path.append(route)
             })
             .navigationDestination(for: AppRoute.self) { route in
@@ -27,7 +27,7 @@ struct NavigationRouter: View {
                     registerView(navigate: { path.append($0)})
                 case .login:
                     // loginView() // Si lo implementas después
-                    Text("Login View Placeholder")
+                    loginView(navigate: { path.append($0)})
                 }
             }
         }

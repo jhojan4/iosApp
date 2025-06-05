@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PresentationView: View {
+    @ObservedObject var viewModel: PresentationViewModel
     var navigate:((AppRoute)->Void)
     var body: some View {
         ZStack {
@@ -17,10 +18,8 @@ struct PresentationView: View {
                 Spacer()           // Empuja EndScreen hacia abajo
                 EndScreen()
             }
-        
-            
     
-                MiddlePresentationView()
+            MiddlePresentationView(viewModel: viewModel)
             
             VStack {
                 Spacer() // Empuja los botones hacia la parte baja
@@ -42,11 +41,11 @@ struct PresentationView: View {
         }
     }
 }
-
+/*
 
 #Preview {
     NavigationStack{
         PresentationView(navigate:{ route in print("\(route)")})
         
     }
-}
+}*/

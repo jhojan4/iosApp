@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct registerView: View {
+    @Environment(\.dismiss) private var dismiss // ⬅️ Importante
     var navigate:(AppRoute)->Void
     var body: some View {
         
@@ -22,8 +23,7 @@ struct registerView: View {
                         background: AppColors.tertiaryLight,
                         size: 25
                     ) {
-                        print("Devolver")
-                        navigate(.login)
+                        dismiss()
                     }
                     Spacer()
                 }

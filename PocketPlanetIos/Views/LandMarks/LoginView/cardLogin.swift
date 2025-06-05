@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct cardLogin: View {
-    var onLogin:()->Void
-    var onBack:()->Void
+    var navigate:(AppRoute)->Void
     var body: some View {
         ZStack {
             VStack(alignment: .center, spacing: 20) {
@@ -23,14 +22,13 @@ struct cardLogin: View {
                 LabelsCards(descripcion: "Contraseña", icono: "lock.fill")
                 
                 AppButtons.Styled(title: "Iniciar Sesión") {
-                    print("Debe ir a Iniciar Sesión")
-                    onLogin()
+                    print("Debe ir a Iniciar Sesión despues de registrar")
                  
                 }
                 
                 AppButtons.TextOnly(title: "¿Aun no tienes cuenta?") {
                     print("Ir a registrar")
-                   
+                    navigate(.register)
                 }
             }
             .padding(30)
