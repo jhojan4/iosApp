@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB48AF8B2DF234BC00021D5B /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = FB48AF8A2DF234BC00021D5B /* FirebaseAppCheck */; };
 		FB8850CB2DF1FC7E00FC467F /* FirebaseAI in Frameworks */ = {isa = PBXBuildFile; productRef = FB8850CA2DF1FC7E00FC467F /* FirebaseAI */; };
 		FB8850CD2DF1FC7E00FC467F /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FB8850CC2DF1FC7E00FC467F /* FirebaseAnalytics */; };
 		FB8850CF2DF1FC7E00FC467F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FB8850CE2DF1FC7E00FC467F /* FirebaseAuth */; };
@@ -75,6 +76,7 @@
 				FB8850CB2DF1FC7E00FC467F /* FirebaseAI in Frameworks */,
 				FB8850D12DF1FC7E00FC467F /* FirebaseAuthCombine-Community in Frameworks */,
 				FB8850D72DF1FC7E00FC467F /* FirebaseFirestore in Frameworks */,
+				FB48AF8B2DF234BC00021D5B /* FirebaseAppCheck in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +147,7 @@
 				FB8850D82DF1FC7E00FC467F /* FirebaseFunctions */,
 				FB8850DA2DF1FC7E00FC467F /* FirebaseInstallations */,
 				FB8850DC2DF1FC7F00FC467F /* FirebaseStorage */,
+				FB48AF8A2DF234BC00021D5B /* FirebaseAppCheck */,
 			);
 			productName = PocketPlanetIos;
 			productReference = FB31E8C22DEF452B0028CA39 /* PocketPlanetIos.app */;
@@ -599,6 +602,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		FB48AF8A2DF234BC00021D5B /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FB8850C92DF1FC7E00FC467F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
+		};
 		FB8850CA2DF1FC7E00FC467F /* FirebaseAI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FB8850C92DF1FC7E00FC467F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

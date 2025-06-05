@@ -5,7 +5,7 @@
 //  Created by Telematica on 5/06/25.
 //
 import FirebaseFirestore
-import FirebaseFirestoreSwift
+//import FirebaseFirestoreSwift
 
 struct UserProfile: Identifiable, Codable {
     @DocumentID var id: String?            // ID automático de Firestore (opcional)
