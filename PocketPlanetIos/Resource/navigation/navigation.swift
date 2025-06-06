@@ -10,6 +10,7 @@ import SwiftUI
 enum AppRoute:Hashable {
     case login
     case register
+    case host // Nueva ventana
 }
 // NavigationRouter.swift
 
@@ -28,6 +29,8 @@ struct NavigationRouter: View {
                 case .login:
                     // loginView() // Si lo implementas después
                     loginView(navigate: { path.append($0)})
+                case .host:
+                    HostView()
                 }
             }
         }

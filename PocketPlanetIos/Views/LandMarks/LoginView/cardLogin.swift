@@ -23,7 +23,7 @@ struct cardLogin: View {
                 
                 AppButtons.Styled(title: "Iniciar Sesión") {
                     print("Debe ir a Iniciar Sesión despues de registrar")
-                 
+                    navigate(.host)  
                 }
                 
                 AppButtons.TextOnly(title: "¿Aun no tienes cuenta?") {
