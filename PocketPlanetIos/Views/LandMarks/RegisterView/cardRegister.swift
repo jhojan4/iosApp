@@ -67,6 +67,7 @@ struct cardRegister: View {
     @State private var repeatPassword = ""
 
     @EnvironmentObject var authViewModel: AuthViewModel
+    @EnvironmentObject var firestoreManager: FirestoreManager
 
     var body: some View {
         ZStack {
@@ -87,9 +88,6 @@ struct cardRegister: View {
                 // Botón Registrar
                 AppButtons.Styled(title: "Registrar") {
                     if password == repeatPassword && !email.isEmpty {
-                        authViewModel.signUp(email: email, password: password)
-
-                        let db = Firestore.firestore()
                         let newUser = UserProfile(
                             userName: userName,
                             email: email,
@@ -99,16 +97,19 @@ struct cardRegister: View {
                             repeatPassword: repeatPassword
                         )
 
-                        do {
-                            _ = try db.collection("users").addDocument(from: newUser)
-                            print("Usuario guardado en Firestore")
-                        } catch {
-                            print("Error al guardar en Firestore: \(error.localizedDescription)")
+                        firestoreManager.registerUser(userProfile: newUser) { success, errorMessage in
+                            if success {
+                                print("Usuario registrado correctamente.")
+                                // Aquí podrías limpiar los campos o navegar
+                            } else {
+                                print(errorMessage ?? "Error desconocido")
+                            }
                         }
                     } else {
                         print("Las contraseñas no coinciden o el email está vacío.")
                     }
                 }
+
 
             }
             .padding(30)

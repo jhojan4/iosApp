@@ -11,6 +11,7 @@ import Firebase
 @main
 struct PocketPlanetIosApp: App {
     @StateObject private var authViewModel = AuthViewModel()
+    @StateObject private var firestoreManager = FirestoreManager()
     init(){
         FirebaseApp.configure()
     }
@@ -20,6 +21,7 @@ struct PocketPlanetIosApp: App {
                 NavigationRouter()
             }
             .environmentObject(authViewModel)
+            .environmentObject(firestoreManager)
         }
     }
 }
