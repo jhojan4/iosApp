@@ -12,6 +12,11 @@ struct HostView: View {
     var body: some View {
         NavigationView {
             ZStack(alignment: .bottomTrailing) {
+                // Tu fondo personalizado
+                BackGround()
+                    .ignoresSafeArea() // Para cubrir toda la pantalla
+                
+                // Contenido principal
                 ScrollView {
                     LazyVGrid(columns: columns, spacing: 16) {
                         ForEach(viewModel.plantas) { plant in
@@ -20,7 +25,7 @@ struct HostView: View {
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(width: 80, height: 80)
-                                    .foregroundColor(.green)
+                                    .foregroundColor(AppColors.tertiaryLight)
                                 Text(plant.nombre)
                                     .font(.headline)
                             }
@@ -39,7 +44,7 @@ struct HostView: View {
                         .font(.system(size: 28))
                         .foregroundColor(.white)
                         .padding()
-                        .background(Color.green)
+                        .background(AppColors.tertiaryLight)
                         .clipShape(Circle())
                         .shadow(radius: 4)
                 }
